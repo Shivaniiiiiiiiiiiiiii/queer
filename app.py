@@ -76,7 +76,7 @@ def signup():
     return jsonify({'success': True})  # Modify as needed
 
 # Login route
-@app.route('/login')
+@app.route('/login', methods=['POST'])
 def login():
     return auth0.authorize_redirect(redirect_uri='http://localhost:5000/callback')
 
